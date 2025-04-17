@@ -1,0 +1,94 @@
+
+# Real-Time Chatbot Project Documentation
+
+## Overview
+The Real-Time Chatbot project is a web-based application built using FastAPI and OpenAI's API for generating responses to user queries. This project allows users to interact with the chatbot in real time via WebSocket communication.
+
+### Features:
+- Real-time communication using WebSockets
+- Integration with OpenAI's GPT-based models for chatbot responses
+- FastAPI backend for handling client requests
+- Static files for CSS, JavaScript, and images served by FastAPI
+
+---
+
+## Requirements
+
+1. Python 3.7+
+2. FastAPI
+3. Uvicorn
+4. OpenAI API key
+5. Jinja2 for templating
+6. dotenv for loading environment variables
+
+---
+
+## Installation
+
+### 1. Clone the repository
+Clone the repository to your local machine:
+```
+git clone <repository_url>
+cd <repository_folder>
+```
+
+### 2. Set up the environment
+Create a `.env` file to store your OpenAI API key:
+```
+OPENAI_API_KEY=your-api-key-here
+```
+
+### 3. Install required dependencies
+Run the following command to install all necessary packages:
+```
+pip install -r requirements.txt
+```
+
+---
+
+## Code Explanation
+
+### `main.py`
+- Initializes FastAPI app
+- Sets up WebSocket endpoint for real-time communication
+- Handles requests from the frontend and sends responses using the OpenAI API
+
+### `templates/`
+- Contains the HTML templates (e.g., `index.html`) used to render the chat interface.
+
+### `static/`
+- Stores static files such as CSS and JavaScript.
+
+### `test_api.py`
+- A test script to check if the OpenAI API is working by sending a test request.
+
+---
+
+## How to Run the Application
+
+1. Ensure that you have your environment set up and `.env` file configured.
+2. Run the FastAPI app using Uvicorn:
+```
+uvicorn main:app --reload
+```
+3. Open the browser and navigate to `http://127.0.0.1:8000` to interact with the chatbot.
+
+---
+
+## Troubleshooting
+
+- **Incorrect API Key:** If the chatbot doesn't respond, ensure your OpenAI API key is valid and correctly set in the `.env` file.
+- **WebSocket connection issues:** Ensure your browser allows WebSocket connections and that there are no firewall or network restrictions.
+
+---
+
+## License
+
+This project is open-source and available under the MIT License.
+
+---
+
+## Credits
+
+- FastAPI: https://fastapi.tiangolo.com/
+- OpenAI: https://platform.openai.com/docs
